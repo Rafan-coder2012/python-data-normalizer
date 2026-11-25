@@ -1,2 +1,3 @@
 # python-data-normalizer
 A simple Python tool that checks data rows, skips bad ones safely, and makes a clean CSV.
+This Python tool reads raw JSON data, checks each row for required fields and valid values, skips bad rows while reporting their errors instead of crashing, and saves the clean records into a CSV file. To keep your files safe, it uses atomic file writes by saving data to a temporary file first and using os.replace() to swap it in once finished so your output is not left half-written if something goes wrong. Next, I plan to add custom field rules, write unit tests to check edge cases automatically, and save rejected rows into a separate error log.
